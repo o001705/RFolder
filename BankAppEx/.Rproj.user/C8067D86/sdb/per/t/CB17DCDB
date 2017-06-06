@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "exportMethods(BankApp)\nexportPattern(\"^[^\\\\.]\")\n\n",
+    "created" : 1496127352944.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1742147699",
+    "id" : "CB17DCDB",
+    "lastKnownWriteTime" : 1496128029,
+    "last_content_update" : 1496128029,
+    "path" : "~/RFolder/BankAppEx/NAMESPACE",
+    "project_path" : "NAMESPACE",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_namespace"
+}

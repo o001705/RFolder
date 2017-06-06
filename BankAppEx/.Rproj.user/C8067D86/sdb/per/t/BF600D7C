@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "###############################################################################################################\n# This script solves call center productivity boosting with ML exercise\n# from http://www.r-exercises.com/2017/05/14/call-center-productivity-boosting-with-machine-learning-exercises/\n# website\n###############################################################################################################\n\n#'@export\nBankApp <- function() {\n  # Exercise 1\n  # Load Libraries randomForest, ggplot2 and caret\n  # \n  # library(randomForest)\n  # library(ggplot2)\n  # library(caret)\n  \n  # BankAppExExercise 2 \n  # Download Download bank-full.csv from This website.\n  \n  dataSet <- read.csv(\"F:/bank/bank-full.csv\",TRUE,\";\")\n  \n  # Exercise 3\n  # Take a look at this data set using head function. \n  # Read the data dictionary to understand all variables.\n  \n  head(dataSet)\n  \n  # Exercise 4\n  # Compare age, housing and loan using ggplot boxplots to find out \n  # any relations with y variable.\n  \n  ggplot(dataSet, aes(y, age)) + geom_boxplot() + facet_grid(housing ~ loan)\n  \n  # Exercise 5\n  # Compare day, marital and loan using ggplot boxplots to find out \n  # any relations with y variable.\n  \n  ggplot(dataSet, aes(y, day)) + geom_boxplot() + facet_grid(loan ~ marital)\n  \n  # Exercise 6\n  # Make a data partition in order to separate training and testing sets. \n  # Reserve 30% of all data for testing procedures.\n  \n  partition <- createDataPartition(y=dataSet$y, p = 0.7, list= FALSE)\n  testing <- dataSet[-partition,]\n  training <- dataSet[partition,]\n  \n  # Exercise 7\n  # Create a prediction model using random forest algorithm. \n  # To make this experiment reproducible set seed equals to 1234.\n  set.seed(1234)\n  modFit <- randomForest(y ~. , data=training)\n  \n  # Exercise 8\n  # Predict values for the testing set, and take a look at those values \n  # using head function.\n  pred <- predict(modFit, testing)\n  head(pred)\n  \n  # Exercise 9\n  # Figure out how many trees were create using this algorithm \n  # and the estimate error rate. Create a confusion matrix using \n  # the testing versus predicted data using the table function. \n  # Why this is different from the Confusion matrix stated in \n  # the model description?\n  modFit\n  matrix <- table(pred, testing$y)\n  matrix\n  \n  # Exercise 10\n  # Consider that you are making 100 calls to make a single sale. \n  # How many calls you will need now using this machine learning algorithm?\n  trueYesPercent <- Matrix[2,2]/(Matrix[1,2] + Matrix[2,1])\n  callsPerSaleML <- 1/trueYesPercent\n  callsPerSaleML\n}\n##################################### EOF #########################################\n\n\n",
+    "created" : 1496112027726.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1949200400",
+    "id" : "BF600D7C",
+    "lastKnownWriteTime" : 1496127278,
+    "last_content_update" : 1496127278046,
+    "path" : "~/RFolder/BankAppEx/BankAppEx.R",
+    "project_path" : "BankAppEx.R",
+    "properties" : {
+        "notebook_format" : "html_document",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
