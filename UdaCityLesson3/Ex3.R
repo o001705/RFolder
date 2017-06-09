@@ -6,4 +6,3 @@ if (require("ggplot2") == FALSE) {
 data(diamonds)
 
 summary(diamonds$price)
-
